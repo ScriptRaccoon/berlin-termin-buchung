@@ -3,9 +3,11 @@ name: Run script every 10 minutes
 on:
     schedule:
         - cron: "*/10 * * * *"
+    push:
+        branches: [main]
 
 jobs:
-    build:
+    run-script:
         runs-on: ubuntu-latest
 
         steps:
