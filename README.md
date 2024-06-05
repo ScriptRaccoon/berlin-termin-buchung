@@ -12,6 +12,7 @@ Notice that you are not allowed (and it is not possible) to book an appointment 
 2. Install the dependencies with `pnpm install`
 3. Rename `.env.template` to `.env` and set the secrets (see below)
 4. Add these secrets to the GitHub repository under `settings/secrets/actions`
+5. If you are looking for a different service than getting an ID card, change the `BOOKING_URL` in `main.js` accordingly.
 
 ## Secrets
 

@@ -7,7 +7,9 @@ import dotenv from "dotenv"
 dotenv.config()
 
 /**
- * URL for booking a slot in Berlin for getting a new ID card
+ * URL for booking a slot in Berlin for getting a new ID card.
+ * Replace the /120703 with the ID for the service you want to book.
+ * See https://service.berlin.de/terminvereinbarung/.
  */
 const BOOKING_URL = "https://service.berlin.de/terminvereinbarung/termin/all/120703/"
 
