@@ -67,10 +67,10 @@ async function get_date(page) {
  */
 async function send_email(date) {
 	const transporter = nodemailer.createTransport({
-		service: "gmail",
+		service: process.env.EMAIL_SERVICE,
 		auth: {
-			user: process.env.GMAIL_USER,
-			pass: process.env.GMAIL_APP_PASSWORD,
+			user: process.env.EMAIL_USER,
+			pass: process.env.EMAIL_PASS,
 		},
 	})
 
@@ -79,7 +79,7 @@ async function send_email(date) {
 		: "Termine für Personalausweis sind verfügbar"
 
 	const options = {
-		from: process.env.GMAIL_USER,
+		from: process.env.EMAIL_USER,
 		to: process.env.RECIPIENT_EMAIL,
 		subject,
 		text: BOOKING_URL,

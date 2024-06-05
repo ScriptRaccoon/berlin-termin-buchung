@@ -15,8 +15,9 @@ Notice that you are not allowed (and it is not possible) to book an appointment 
 
 ## Secrets
 
-`GMAIL_APP_PASSWORD` = the app password for your gmail account
+-   `EMAIL_USER` = the sender email address
+-   `EMAIL_PASS` = the corresponding password\*
+-   `EMAIL_SERVICE` = your email provider (for example, gmail)
+-   `RECIPIENT_EMAIL` = the recipient email address
 
-`GMAIL_USER` = your gmail address
-
-`RECIPIENT_EMAIL` = the recipient of the email
+\*This needs to be an [app password](https://support.google.com/mail/answer/185833) if you have two-factor authentication enabled.
