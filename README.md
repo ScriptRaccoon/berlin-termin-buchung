@@ -22,5 +22,8 @@ Notice that you are not allowed (and it is not possible) to book an appointment 
 -   `EMAIL_PASS` = the corresponding password\*
 -   `EMAIL_SERVICE` = your email provider (for example, gmail)
 -   `RECIPIENT_EMAIL` = the recipient email address
+-   `DATE_BEFORE` = the date before which you want to get an appointment\*\*
 
 \*This needs to be an [app password](https://support.google.com/mail/answer/185833) if you have two-factor authentication enabled.
+
+\*\*This is optional. This date is useful to filter out some emails about appointments which are too late for you anyway.

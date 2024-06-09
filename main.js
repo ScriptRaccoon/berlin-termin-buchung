@@ -82,15 +82,22 @@ async function has_appointments(page) {
  * @returns {Promise<{date: string, url: string} | null>}
  */
 async function get_slot(page) {
-	return page.evaluate(() => {
+	return page.evaluate((DATE_BEFORE) => {
 		const td = document.querySelector("td.buchbar")
 		if (!td) return null
 		const link = td.querySelector("a")
 		if (!link) return null
 		const date = link.getAttribute("title")?.split(" - ")[0]?.trim() ?? ""
+
+		if (date && DATE_BEFORE) {
+			const date_before = new Date(DATE_BEFORE.split(".").reverse().join("-"))
+			const date_to_check = new Date(date.split(".").reverse().join("-"))
+			if (date_to_check >= date_before) return null
+		}
+
 		const url = link.getAttribute("href") ?? ""
 		return { date, url }
-	})
+	}, process.env.DATE_BEFORE)
 }
 
 /**
