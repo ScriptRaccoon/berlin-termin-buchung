@@ -1,8 +1,8 @@
-name: Run script every 10 minutes
+name: Run script every 2 minutes
 
 on:
     schedule:
-        - cron: "*/10 * * * *"
+        - cron: "*/2 * * * *"
 
 jobs:
     run-script:
