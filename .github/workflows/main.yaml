@@ -1,8 +1,10 @@
 name: Run script every 2 minutes
 
 on:
-    schedule:
-        - cron: "*/2 * * * *"
+    # uncomment the next lines to run the script every 2 minutes
+    # schedule:
+    #     - cron: "*/2 * * * *"
+    workflow_dispatch:
 
 jobs:
     run-script:
