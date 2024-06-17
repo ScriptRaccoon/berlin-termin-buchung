@@ -23,9 +23,9 @@ const BOOKING_URL = `${BASE_URL}/terminvereinbarung/termin/all/120703/`
  * and if so, sends an email to the recipient email address with a link to the booking page
  */
 async function check_appointments() {
+	const browser = await puppeteer.launch()
 	try {
 		console.info("Checking for appointments...")
-		const browser = await puppeteer.launch()
 
 		const page = await browser.newPage()
 		await page.goto(BOOKING_URL)
@@ -62,6 +62,7 @@ async function check_appointments() {
 		await browser.close()
 	} catch (error) {
 		console.error(error)
+		await browser.close()
 	}
 }
 
